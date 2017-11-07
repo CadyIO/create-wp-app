@@ -20,7 +20,7 @@
 		"bash": "docker exec -it ${name} bash",
 		"logs": "docker logs -f ${name}",
 		"stop": "docker-compose -f ./docker/docker-compose.yml down -v",
-    "prune": "docker system prune --volumes -f",
+    "destroy": "docker system prune --volumes -f",
 
 		"build": "./node_modules/node-sass/bin/node-sass -r --output-style expanded --indent-type tab --indent-width 1 -o ./theme ./styles",
 		"clean": "rm -rf ./dist/",

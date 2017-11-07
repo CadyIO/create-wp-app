@@ -16,7 +16,7 @@ cd /var/www/html
 wp core download --allow-root --force
 
 # Create WP Config
-wp config create --allow-root --dbhost=localhost --dbname=${DB_NAME} --dbuser=${DB_USER} --dbpass=${DB_PASS} --extra-php <<PHP
+wp config create --allow-root --force --dbhost=localhost --dbname=${DB_NAME} --dbuser=${DB_USER} --dbpass=${DB_PASS} --extra-php <<PHP
 define('WP_DEBUG', true);
 define('FS_METHOD', 'direct');
 PHP
@@ -28,7 +28,7 @@ then
 
 	wp rewrite structure '/%postname%/' --allow-root
 
-	wp scaffold _s ${WP_THEME_SLUG} --theme_name="${WP_THEME_NAME}" --author="${WP_THEME_AUTHOR}" --author_uri="${WP_THEME_AUTHOR_URI}" --sassify --activate --allow-root
+	wp scaffold _s ${WP_THEME_SLUG} --theme_name="${WP_THEME_NAME}" --author="${WP_THEME_AUTHOR}" --sassify --activate --force --allow-root
 
 	rm -rf /var/www/html/wp-content/themes/${WP_THEME_SLUG}/.editorconfig
 	rm -rf /var/www/html/wp-content/themes/${WP_THEME_SLUG}/phpcs.xml.dist

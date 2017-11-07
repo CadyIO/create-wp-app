@@ -22,7 +22,6 @@ services:
         WP_THEME_NAME: ${WP_THEME_NAME}
         WP_THEME_SLUG: ${WP_THEME_SLUG}
         WP_THEME_AUTHOR: ${WP_THEME_AUTHOR}
-        WP_THEME_AUTHOR_URI: ${WP_THEME_AUTHOR_URI}
 
         WP_PLUGINS: ${WP_PLUGINS}
     ports:
