@@ -1,0 +1,17 @@
+{
+	"name": "${name}/${name}",
+	"description": "",
+	"type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/CadyIO/WordPress-Coding-Standards.git"
+        }
+    ],
+	"require": {},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "0.4.0",
+		"squizlabs/php_codesniffer": "2.9.1",
+		"wp-coding-standards/wpcs": "dev-cady"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"name": "create-wp-app",
+	"description": "Create a WordPress website with Docker support.",
+	"author": "Cady IO <contact@cady.io>",
+	"version": "1.0.8",
+	"license": "MIT",
+	"bin": {
+		"create-wp-app": "./index.js"
+	},
+	"dependencies": {
+		"babel-cli": "latest",
+		"babel-preset-env": "latest",
+		"commander": "latest",
+		"ncp": "latest"
+	},
+	"devDependencies": {
+		"eslint": "latest",
+		"jshint": "latest"
+	}
+}

@@ -1,0 +1,13 @@
+*.log
+
+# Composer
+composer.lock
+vendor
+
+# NPM/Yarn
+package-lock.json
+yarn.lock
+node_modules
+
+# Project
+dist

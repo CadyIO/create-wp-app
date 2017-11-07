@@ -1,0 +1,38 @@
+{
+	"name": "${name}",
+	"description": "",
+	"author": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"keywords": [
+		"website",
+    "frontend",
+    "theme",
+    "wordpress"
+	],
+	"scripts": {
+    "install": "composer install",
+
+		"backup": "docker exec ${name} mysqldump ${name} > ./data/backup.sql",
+		"compile": "docker-compose -f ./docker/docker-compose.yml up -d --build",
+		"start": "docker-compose -f ./docker/docker-compose.yml up -d",
+		"mysql": "docker exec -it ${name} mysql",
+		"bash": "docker exec -it ${name} bash",
+		"logs": "docker logs -f ${name}",
+		"stop": "docker-compose -f ./docker/docker-compose.yml down -v",
+    "prune": "docker system prune --volumes -f",
+
+		"build": "./node_modules/node-sass/bin/node-sass -r --output-style expanded --indent-type tab --indent-width 1 -o ./theme ./styles",
+		"clean": "rm -rf ./dist/",
+		"package": "rm -rf ./dist/; mkdir ./dist/; yarn build; cd ./theme/; zip -r ../dist/${name}.zip *; cd ../",
+		"purge": "rm -rf ./dist/; rm -rf ./node_modules/; rm -rf ./vendor/; rm -rf ./composer.lock",
+    "watch": "./node_modules/node-sass/bin/node-sass -w -r --output-style expanded --indent-type tab --indent-width 1 -o ./theme ./styles",
+
+		"permissions": "sudo chown -R $USER:$USER ./"
+	},
+	"devDependencies": {
+		"eslint": "latest",
+		"jshint": "latest",
+		"node-sass": "latest"
+	}
+}

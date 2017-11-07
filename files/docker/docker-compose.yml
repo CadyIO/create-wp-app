@@ -1,0 +1,36 @@
+version: '2.1'
+
+services:
+
+  ${name}:
+    container_name: ${CONTAINER_NAME}
+    env_file:
+      - ../.env
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        DB_NAME: ${DB_NAME}
+        DB_USER: ${DB_USER}
+        DB_PASS: ${DB_PASS}
+
+        WP_ADMIN_EMAIL: ${WP_ADMIN_EMAIL}
+        WP_ADMIN_PASSWORD: ${WP_ADMIN_PASSWORD}
+
+        WP_SITE_TITLE: ${WP_SITE_TITLE}
+
+        WP_THEME_NAME: ${WP_THEME_NAME}
+        WP_THEME_SLUG: ${WP_THEME_SLUG}
+        WP_THEME_AUTHOR: ${WP_THEME_AUTHOR}
+        WP_THEME_AUTHOR_URI: ${WP_THEME_AUTHOR_URI}
+
+        WP_PLUGINS: ${WP_PLUGINS}
+    ports:
+      - 127.0.0.1:${WEB_PORT}:80
+      - 127.0.0.1:${DB_PORT}:3306
+      - 127.0.0.1:${XDEBUG_PORT}:9000
+    volumes:
+      - ../data:/mnt/data
+      - ../styles:/mnt/styles
+      - ../theme:/var/www/html/wp-content/themes/${WP_THEME_SLUG}
+      - ../uploads:/var/www/html/wp-content/uploads

@@ -57,3 +57,10 @@ typings/
 # dotenv environment variables file
 .env
 
+# Lock files
+package-lock.json
+yarn.lock
+
+# Composer
+composer.lock
+vendor
