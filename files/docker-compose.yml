@@ -5,9 +5,9 @@ services:
   ${name}:
     container_name: ${CONTAINER_NAME}
     env_file:
-      - ../.env
+      - ./.env
     build:
-      context: ./
+      context: ./docker
       dockerfile: Dockerfile
       args:
         DB_NAME: ${DB_NAME}
@@ -29,7 +29,7 @@ services:
       - 127.0.0.1:${DB_PORT}:3306
       - 127.0.0.1:${XDEBUG_PORT}:9000
     volumes:
-      - ../data:/mnt/data
-      - ../styles:/mnt/styles
-      - ../theme:/var/www/html/wp-content/themes/${WP_THEME_SLUG}
-      - ../uploads:/var/www/html/wp-content/uploads
+      - ./data:/mnt/data
+      - ./styles:/mnt/styles
+      - ./theme:/var/www/html/wp-content/themes/${WP_THEME_SLUG}
+      - ./uploads:/var/www/html/wp-content/uploads

@@ -1,9 +1,6 @@
 {
 	"name": "${name}",
-	"description": "",
-	"author": "",
 	"version": "1.0.0",
-	"homepage": "",
 	"keywords": [
 		"website",
     "frontend",
@@ -13,14 +10,14 @@
 	"scripts": {
     "install": "composer install",
 
-		"start": "docker-compose -f ./docker/docker-compose.yml up -d",
-    "stop": "docker-compose -f ./docker/docker-compose.yml down -v",
+		"start": "docker-compose up -d",
+    "stop": "docker-compose down -v",
 		"backup": "docker exec ${name} mysqldump ${name} > ./data/backup.sql",
 		"logs": "docker logs -f ${name}",
 		"mysql": "docker exec -it ${name} mysql",
 		"bash": "docker exec -it ${name} bash",
 
-		"compile": "docker-compose -f ./docker/docker-compose.yml up -d --build",
+		"compile": "docker-compose up -d --build",
 
 		"build": "./node_modules/node-sass/bin/node-sass -r --output-style expanded --indent-type tab --indent-width 1 -o ./theme ./styles",
 		"clean": "rm -rf ./dist/",
