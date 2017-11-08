@@ -13,14 +13,14 @@
 	"scripts": {
     "install": "composer install",
 
-		"backup": "docker exec ${name} mysqldump ${name} > ./data/backup.sql",
-		"compile": "docker-compose -f ./docker/docker-compose.yml up -d --build",
 		"start": "docker-compose -f ./docker/docker-compose.yml up -d",
+    "stop": "docker-compose -f ./docker/docker-compose.yml down -v",
+		"backup": "docker exec ${name} mysqldump ${name} > ./data/backup.sql",
+		"logs": "docker logs -f ${name}",
 		"mysql": "docker exec -it ${name} mysql",
 		"bash": "docker exec -it ${name} bash",
-		"logs": "docker logs -f ${name}",
-		"stop": "docker-compose -f ./docker/docker-compose.yml down -v",
-    "destroy": "docker system prune --volumes -f",
+
+		"compile": "docker-compose -f ./docker/docker-compose.yml up -d --build",
 
 		"build": "./node_modules/node-sass/bin/node-sass -r --output-style expanded --indent-type tab --indent-width 1 -o ./theme ./styles",
 		"clean": "rm -rf ./dist/",

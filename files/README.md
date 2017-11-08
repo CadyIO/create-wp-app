@@ -2,7 +2,7 @@
 
 ## Dependencies
 
-Install **Docker**, **Node JS / NPM**, and optionally **Yarn**.
+Install **Docker**, **Node JS / NPM**, **PHP Composer**, and optionally **Yarn**.
 
 On Mac OS X and Windows, **docker-compose** is installed with Docker. Depending how Docker is installed on Linux, docker-compose may need to be installed seperately with:
 
@@ -22,12 +22,13 @@ To visually view Docker instances on Mac OS X or Windows, install Kitematic afte
 | ---- | --- | ----- |
 | `yarn` | `npm i` | Install Node.js and Composer dependencies. |
 | | | |
-| `yarn backup` | `npm run backup` | Backup database. NOTE: Must be run while Docker is running. |
 | `yarn start` | `npm run start` | Spin up Docker database and website. |
 | `yarn stop` | `npm run stop` | Shut down Docker instance and clean up volumes. |
-| `yarn db` | `npm run db` | Connect to MariaDB to run MySQL commands. |
-| `yarn bash` | `npm run bash` | Connect to instance to run bash commands. |
+| `yarn backup` | `npm run backup` | Backup database. NOTE: Must be run while Docker is running. |
 | `yarn logs` | `npm run logs` | Open Docker logs for instance. |
+| `yarn mysql` | `npm run mysql` | Connect to MariaDB to run MySQL commands. |
+| `yarn bash` | `npm run bash` | Connect to instance to run bash commands. |
+| | | |
 | `yarn compile` | `npm compile` | OPTIONAL. Rebuild Docker Image. Only necessary if Dockerfile changes. |
 | | | |
 | `yarn build` | `npm run build` | Compile SCSS from `./styles/` folder into CSS in `./theme/` folder. |
