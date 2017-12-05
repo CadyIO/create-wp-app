@@ -13,7 +13,7 @@ module.exports = name =>
       path.join(name, "composer.json"),
       path.join(name, "package.json"),
       path.join(name, "README.md"),
-      path.join(name, "docker", "docker-compose.yml")
+      path.join(name, "docker-compose.yml")
     ];
 
     const findAndReplace = filePath =>
